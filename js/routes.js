@@ -8,8 +8,14 @@ routes = [
     url: './pages/about.html',
   },
   {
-    path: '/catalog/',
-    componentUrl: './pages/catalog.html',
+    path: '/individual/',
+    id: 'individual',
+    url: './pages/individual.html',
+  },
+  {
+    path: '/business/',
+    id: 'business',
+    url: './pages/business.html',
   },
   {
     path: '/product/:id/',
