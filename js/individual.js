@@ -7,23 +7,19 @@ var app  = new Framework7({
   id: 'io.framework7.testapp', // App bundle ID
   name: 'Framework7', // App name
   theme: 'auto', // Automatic theme detection
-
   // App routes
   routes: routes,
 });
 
 // Init/Create views
-var homeView = app.views.create('#view-home', {
-  url: '/'
+var bussdashView = app.views.create('#view-indidash', {
+  url: '/indidash/'
 });
-var individualView = app.views.create('#individual', {
-  url: '/individual/'
+var profileView = app.views.create('#profile', {
+  url: '/profile/'
 });
-var businessView = app.views.create('#business', {
-  url: '/business/'
-});
-var settingsView = app.views.create('#view-settings', {
-  url: '/settings/'
+var infoView = app.views.create('#info', {
+  url: '/info/'
 });
 
 // Login Screen Demo
