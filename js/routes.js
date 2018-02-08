@@ -14,19 +14,15 @@ routes = [
     url: './pages/business.html',
   },
   {
-    path: '/settings/',
-    url: './pages/settings.html',
+    path: '/info/',
+    id: 'info',
+    url: './pages/info.html',
   },
 
   //Page route for business section
   {
     path: 'bussdash',
-    url: './businessdash.html',
-  },
-  {
-    path: '/daily/',
-    id: 'daily',
-    url: './pages/business/daily.html',
+    url: './business.html',
   },
   {
     path: '/specific/',
@@ -34,24 +30,29 @@ routes = [
     url: './pages/business/specific.html',
   },
   {
-    path: '/businessprofile/',
-    url: './pages/business/businessprofile.html',
+    path: '/daily/',
+    id: 'daily',
+    url: './pages/business/daily.html',
+  },
+  {
+    path: '/businessProfile/',
+    url: './pages/business/businessProfile.html',
   },
 
   //Page route for individual section
   {
-    path: 'indidash',
-    url: './individualdash.html',
+    path: 'indiDash',
+    url: './individualDash.html',
   },
   {
-    path: '/profile/',
-    id: 'profile',
-    url: './pages/individual/profile.html',
+    path: '/individualProfile/',
+    id: 'individualProfile',
+    url: './pages/individual/individualProfile.html',
   },
   {
-    path: '/info/',
-    id: 'info',
-    url: './pages/individual/info.html',
+    path: '/indiInfo/',
+    id: 'indiInfo',
+    url: './pages/individual/indiInfo.html',
   },
 
   // Default route (404 page). MUST BE THE LAST

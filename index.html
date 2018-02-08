@@ -12,6 +12,7 @@
   <title>Where's the Craic</title>
 
   <link rel="stylesheet" href="css/framework7.min.css">
+  <link rel="stylesheet" href="css/framework7-icons.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/app.css">
 </head>
@@ -31,22 +32,22 @@
             <i class="icon material-icons md-only">home</i>
             <span class="tabbar-label">Home</span>
           </a>
-          <a href="#business" class="tab-link" data-route-tab-id="business">
-            <i class="icon f7-icons ios-only">home</i>
-            <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
-            <i class="icon material-icons md-only">home</i>
+          <a href="#view-business" class="tab-link">
+            <i class="icon f7-icons ios-only">bag</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">bag_fill</i>
+            <i class="icon material-icons md-only">bag</i>
             <span class="tabbar-label">Business</span>
           </a>
-          <a href="#individual" class="tab-link" data-route-tab-id="individual">
-            <i class="icon f7-icons ios-only">home</i>
-            <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
-            <i class="icon material-icons md-only">home</i>
+          <a href="#view-individual" class="tab-link">
+            <i class="icon f7-icons ios-only">persons</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">persons_fill</i>
+            <i class="icon material-icons md-only">persons</i>
             <span class="tabbar-label">Individual</span>
           </a>
-          <a href="#view-settings" class="tab-link">
-            <i class="icon f7-icons ios-only">settings</i>
-            <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>
-            <i class="icon material-icons md-only">settings</i>
+          <a href="#view-info" class="tab-link">
+            <i class="icon f7-icons ios-only">info</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">info_fill</i>
+            <i class="icon material-icons md-only">info</i>
             <span class="tabbar-label">info</span>
           </a>
         </div>
@@ -58,12 +59,6 @@
           <!-- Top Navbar -->
           <div class="navbar">
             <div class="navbar-inner">
-              <div class="left">
-                <a href="#" class="link icon-only panel-open" data-panel="left">
-                  <i class="icon f7-icons ios-only">menu</i>
-                  <i class="icon material-icons md-only">menu</i>
-                </a>
-              </div>
               <div class="title sliding">Where's the Craic</div>
               <div class="right">
                 <a href="#" class="list login-screen-open" data-login-screen="#my-login-screen">Login</a>
@@ -89,63 +84,18 @@
                 <div class="swiper-slide">Slide 6</div>
               </div>
             </div>
-
-            <div class="block-title">Navigation</div>
-            <div class="list">
-              <ul>
-                <li>
-                  <a href="/about/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">About</div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="block-title">Modals</div>
-            <div class="block block-strong">
-              <div class="row">
-                <div class="col-50">
-                  <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
-                </div>
-                <div class="col-50">
-                  <a href="#" class="button button-raised button-fill login-screen-open" data-login-screen="#my-login-screen">Login Screen</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="block-title searchbar-hide-on-search">Page Loaders & Router</div>
-            <div class="list links-list searchbar-hide-on-search">
-              <ul>
-                <li>
-                  <a href="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top">Template7 Page</a>
-                </li>
-                <li>
-                  <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component Page</a>
-                </li>
-                <li>
-                  <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
-                </li>
-                <li>
-                  <a href="/request-and-load/user/123456/">Request Data & Load</a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
 
+      <!-- Init individual View -->
+      <div class="view tab" id="view-individual"></div>
       
-      <div class="tab page-content" id="individual"></div>
-      
-      <!-- business View -->
-      <div class="tab page-content" id="business"></div>
+      <!-- Init business View -->
+      <div class="view tab" id="view-business"></div>
 
-      <!-- Settings View -->
-      <div id="view-settings" class="view tab">
-        <!-- Settings page will be loaded here dynamically from /settings/ route -->
-      </div>
+      <!-- Init info View -->
+      <div class="view tab" id="view-info"></div>
     </div>
 
     <!-- Login Screen -->
@@ -206,10 +156,8 @@
 
   <!-- Framework7 library -->
   <script src="js/framework7.min.js"></script>
-
   <!-- App routes -->
   <script src="js/routes.js"></script>
-
   <!-- Your custom app scripts -->
   <script src="js/app.js"></script>
 </body>

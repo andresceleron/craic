@@ -15,10 +15,10 @@ var app  = new Framework7({
 var bussdashView = app.views.create('#view-bussdash', {
   url: '/bussdash/'
 });
-var specificView = app.views.create('#specific', {
+var specificView = app.views.create('#view-specific', {
   url: '/specific/'
 });
-var dailyView = app.views.create('#daily', {
+var dailyView = app.views.create('#view-daily', {
   url: '/daily/'
 });
 var businessprofileView = app.views.create('#view-businessprofile', {

@@ -12,24 +12,12 @@ var app  = new Framework7({
 });
 
 // Init/Create views
-var bussdashView = app.views.create('#view-indidash', {
-  url: '/indidash/'
+var indiDashView = app.views.create('#view-indiDash', {
+  url: '/indiDash/'
 });
-var profileView = app.views.create('#profile', {
-  url: '/profile/'
+var individualProfileView = app.views.create('#view-individualProfile', {
+  url: '/individualProfile/'
 });
-var infoView = app.views.create('#info', {
-  url: '/info/'
-});
-
-// Login Screen Demo
-$$('#my-login-screen .login-button').on('click', function () {
-  var username = $$('#my-login-screen [name="username"]').val();
-  var password = $$('#my-login-screen [name="password"]').val();
-
-  // Close login screen
-  app.loginScreen.close('#my-login-screen');
-
-  // Alert username and password
-  app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
+var indiInfoView = app.views.create('#view-indiInfo', {
+  url: '/indiInfo/'
 });

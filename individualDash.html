@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Where's the Craic</title>
+
+  <link rel="stylesheet" href="css/framework7.min.css">
+  <link rel="stylesheet" href="css/framework7-icons.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+
+    <!-- Views/Tabs container -->
+    <div class="views tabs ios-edges">
+      <!-- Tabbar for switching views-tabs -->
+      <div class="toolbar tabbar-labels toolbar-bottom-md">
+        <div class="toolbar-inner">
+          <a href="#view-indiDash" class="tab-link tab-link-active">
+            <i class="icon f7-icons ios-only">world</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">world_fill</i>
+            <i class="icon material-icons md-only">world</i>
+            <span class="tabbar-label">Dashboard</span>
+          </a>
+          <a href="#view-individualProfile" class="tab-link">
+            <i class="icon f7-icons ios-only">person</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">person_fill</i>
+            <i class="icon material-icons md-only">person</i>
+            <span class="tabbar-label">Profile</span>
+          </a>
+          <a href="#view-indiInfo" class="tab-link">
+            <i class="icon f7-icons ios-only">sort</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">sort_fill</i>
+            <i class="icon material-icons md-only">sort</i>
+            <span class="tabbar-label">Info</span>
+          </a>
+        </div>
+      </div>
+      <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+      <div id="view-indiDash" class="view view-main tab tab-active">
+        <!-- Page, data-name contains page name which can be used in page callbacks -->
+        <div class="page" data-name="home">
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title sliding">Dashboard</div>
+            </div>
+          </div>
+
+          <!-- Scrollable page content-->
+          <div class="page-content">
+            <div class="block block-strong">
+              <p>Individual dashboard</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Init profile View -->
+      <div class="view tab" id="view-individualProfile"></div>
+      <!-- init info View -->
+      <div class="view tab" id="view-indiInfo"></div>
+    </div>
+  </div>
+  <!-- Cordova -->
+  <!--
+  <script src="cordova.js"></script>
+  -->
+
+  <!-- Framework7 library -->
+  <script src="js/framework7.min.js"></script>
+  <!-- App routes -->
+  <script src="js/routes.js"></script>
+  <!-- Your custom app scripts -->
+  <script src="js/individual.js"></script>
+</body>
+</html>

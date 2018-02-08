@@ -16,14 +16,14 @@ var app  = new Framework7({
 var homeView = app.views.create('#view-home', {
   url: '/'
 });
-var individualView = app.views.create('#individual', {
+var individualView = app.views.create('#view-individual', {
   url: '/individual/'
 });
-var businessView = app.views.create('#business', {
+var businessView = app.views.create('#view-business', {
   url: '/business/'
 });
-var settingsView = app.views.create('#view-settings', {
-  url: '/settings/'
+var infoView = app.views.create('#view-info', {
+  url: '/info/'
 });
 
 // Login Screen Demo
