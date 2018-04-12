@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Where's the Craic</title>
+
+  <link rel="stylesheet" href="css/framework7.min.css">
+  <link rel="stylesheet" href="css/individual.css">
+  <!--Icon CSS implements-->
+  <link rel="stylesheet" href="css/framework7-icons.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div id="app">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+
+    <!-- Views/Tabs container -->
+    <div class="views tabs ios-edges">
+      <!-- Tabbar for switching views-tabs -->
+      <div class="toolbar tabbar-labels toolbar-bottom-md">
+        <div class="toolbar-inner">
+          <a href="#view-indiDash" class="tab-link tab-link-active">
+            <i class="icon f7-icons ios-only">data</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">data_fill</i>
+            <i class="icon material-icons md-only">dashboard</i>
+            <span class="tabbar-label">Dashboard</span>
+          </a>
+          <a href="#view-individualProfile" class="tab-link">
+            <i class="icon f7-icons ios-only">person</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">person_fill</i>
+            <i class="icon material-icons md-only">perm_contact_calendar</i>
+            <span class="tabbar-label">Profile</span>
+          </a>
+          <a href="#view-indiInfo" class="tab-link">
+            <i class="icon f7-icons ios-only">sort</i>
+            <i class="icon f7-icons ios-only icon-ios-fill">sort_fill</i>
+            <i class="icon material-icons md-only">info_outline</i>
+            <span class="tabbar-label">Info</span>
+          </a>
+        </div>
+      </div>
+      <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+      <div id="view-indiDash" class="view view-main tab tab-active">
+        <!-- Page, data-name contains page name which can be used in page callbacks -->
+        <div class="page" data-name="home">
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title sliding">Craics Nearby</div>
+            </div>
+          </div>
+
+          <!-- Scrollable page content-->
+          <div class="page-content">
+            <div class="block-title">Searching with place
+            </div>
+            <div class="list inline-labels no-hairlines-md">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-media">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">Country</div>
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Your iOS device" readonly="readonly" id="picker-country"/>
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-media">
+                    <i class="icon demo-list-icon"></i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title item-label">Place</div>
+                    <div class="item-input-wrap">
+                      <input id="autoComplete" placeholder="eg. Smithfield" type="text"/>
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <!--Implement Google Map-->
+              <div class="block-title">View on map within your location</div>
+              <div id="map" class="map"></div>
+
+            </div>
+
+            <!--Implement Google Map-->
+            <div id="map" class="map"></div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Init profile View -->
+      <div class="view tab" id="view-individualProfile"></div>
+      <!-- init info View -->
+      <div class="view tab" id="view-indiInfo"></div>
+    </div>
+  </div>
+  <!-- Cordova -->
+  <!--
+  <script src="cordova.js"></script>
+  -->
+
+  <!-- Framework7 library -->
+  <script src="js/framework7.min.js"></script>
+  <!-- App routes -->
+  <script src="js/routes.js"></script>
+  <!-- Your custom app scripts -->
+  <script src="js/individual.js"></script>
+
+  <!--Google Map API JavaScripts-->
+  <script>
+    var infoWindow;
+
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: {lat: 53.346, lng: -6.259},
+        styles: [
+          {
+            featureType: 'poi',
+            stylers: [{visibility: 'off'}]
+          }
+        ]
+      });
+
+      //Geolocation Setup
+      infoWindow = new google.maps.InfoWindow;
+      //Try HTML5 Geolocation
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          infoWindow.open(map);
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+    }
+
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0z35qhIY-EedV_t9zNLp6brn0gm5eZVg&callback=initMap">
+  </script>
+</body>
+</html>
