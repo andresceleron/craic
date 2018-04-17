@@ -1,8 +1,7 @@
-// Dom7
 var $$ = Dom7;
 
 // Framework7 App main instance
-var app  = new Framework7({
+var app = new Framework7({
   root: '#app', // App root element
   id: 'io.framework7.testapp', // App bundle ID
   name: 'Framework7', // App name
@@ -21,3 +20,6 @@ var individualProfileView = app.views.create('#view-individualProfile', {
 var indiInfoView = app.views.create('#view-indiInfo', {
   url: '/indiInfo/'
 });
+/*
+  codigo de facebook lo pase a facebookLogin.js
+*/
