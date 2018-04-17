@@ -1,10 +1,8 @@
-
 <?php
 $username="root";
 $password="";
 $database="dbcraic";
 $servername = "localhost";
-
 /*		Server AWS connection		
 		$username = "dbcraicAdmin";
 		$password = "passw1234..."; check with Tong!
@@ -23,13 +21,5 @@ img route: ./img/filename.....
 scrypt o pbkdf2 scrits for encrypt passwords...   
 
 bootstrap, angular and ionic like framwork7... 
-
-
 */
-
-
-
 ?>
-
-
-
