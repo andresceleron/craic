@@ -1,0 +1,95 @@
+<div class="page" data-name="daily">
+  <div class="navbar">
+    <div class="navbar-inner sliding"style="background-image: url(img/top6.png)">
+       <img src="img/wtclogo5.png" width="100" height="150">
+        <div class="title">Where's the Craic</div>
+         <div class="right">
+            
+            <button onclick="logoutPerson()">Logout</button> 
+                  
+                     
+                      
+        </div>
+    </div>
+  </div>
+  <div class="page-content">
+      <h1>USER PROFILE</h1>
+      
+      
+      
+ <div class="data-table card" style="box-shadow: -1px 0 15px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;">
+   <div class="card data-table data-table-collapsible data-table-init">
+  <div class="card-header">
+    <div class="data-table-title">Your Details from Facebook</div>
+    <div class="data-table-actions">
+      
+      <a class="link icon-only">
+        <i class="icon f7-icons ios-only">more_vertical_round</i>
+        <i class="icon material-icons md-only">more_vert</i>
+      </a>
+    </div>
+  </div>
+  <div class="card-content">
+        
+              <table>
+                <thead>
+                  <tr>
+                      <th>
+                         <!-- <img style="float:left"; src="img/profilered.png" width="150" height="150">-->
+                         
+                      </th>
+                    <th class="label-cell" style="font-family:stencil;font-size: 20px;font-weight: bold; color: black">User Information</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                    <td class="label-cell" style="font-weight: bold; font-size: 15px">PICTURE:</td>
+                      <td align="right">  <div id="Upicture"></div></td>
+                  </tr>
+                  <tr>
+                    <td class="label-cell" style="font-weight: bold; font-size: 15px"> NAME:</td>
+                    <td class="numeric-cell" style="font-size: 15px"> <div id="uName"></div> </td>
+
+                  </tr>
+                   <tr>
+                    <td class="label-cell" style="font-weight: bold; font-size: 15px">LAST NAME:</td>
+                    <td class="numeric-cell" style="font-size: 15px"> <div id="uLast"></div> </td>
+
+                  </tr>
+                    
+                    <tr>
+                    <td class="label-cell" style="font-weight: bold; font-size: 15px">GENDER:</td>
+                    <td class="numeric-cell"style="font-size: 16px"><div id="uGen"></div></td>
+                  </tr>
+                    
+                   
+                    <tr>
+                    <td class="label-cell" style="font-weight: bold; font-size: 15px">EMAIL:</td>
+                      <td class="numeric-cell"style="font-size: 16px"> <div id="uEmail"></div></td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+                  </div>
+                     </div>
+            </div> 
+                  
+        <center>
+         <br><br>
+            <p>CopyRight@2018</p>
+
+        </center>
+  </div>
+</div>
+<script>
+function logoutPerson(){
+
+FB.logout(function(response) { 
+    window.location.href = 'index.html';
+    //location.reload();//refresh
+   // Person is now logged out
+});
+}
+</script>
+

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+  
+ html, body {
+      position: relative;
+      height: 100%;
+}
+body {
+      background-image: url(backg.jpg);
+      background: #000000;
+      font-family: sans-serif;
+      font-size: 14px;
+      color:#000000;
+      margin: 0;
+      padding: 0;
+}
+ button { 
+background-color:#7D0541;
+color: #EBF4FA; 
+font-family:Helvetica;
+padding: 10px 10px;
+padding-right: -50px;
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+cursor: pointer;
+margin:5px;
+border-radius: 5px;
+border: 1px solid;
+border-color: black;
+}
+    
+.page-content {
+ background-image:url(img/back4.jpg);
+}
+.title {
+color: #FEFCFF; 
+font-family:stencil; 
+font-size: 30px; 
+font-weight: bold;
+text-shadow: -1px 0 15px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;
+padding-left: 10px;
+}
+p {
+color: dimgray;
+text-align: inherit;
+font-family:Helvetica;
+margin: 60px 150px;
+font-size:150%;
+font-weight: bold;
+}
+h1{
+color: #FEFCFF; 
+font-family:stencil; 
+font-size: 40px; 
+font-weight: bold;
+text-shadow: -1px 0 15px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;
+  
+}
+        
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	
+        }
+.swiper-slide img {
+box-sizing: auto;
+width:auto;
+height:auto;
+max-width:100%;
+max-height:100%:
+}
+
+#imagen {
+     box-shadow: 15px 15px 20px gray;
+    }
+tr.spaceUnder>td {
+  padding-bottom: 2em;
+}
+td
+{
+    padding:0 15px 0 15px;
+}
+.swiper-container {
+    width: 100%;
+    
+    background: grey;
+      height: 200px;
+}    
+ .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: grey;
+       
+        display: flex;
+        
+        align-items: center;
+        
+    
+    }
+
+</style>
+        
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    
+  <title>Where's the Craic</title>
+
+  <link rel="stylesheet" href="css/framework7.min.css">
+  <link rel="stylesheet" href="css/framework7-icons.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+
+    <!-- Views/Tabs container -->
+    <div class="views tabs ios-edges">
+      <!-- Tabbar for switching views-tabs -->
+      <div class="toolbar tabbar-labels toolbar-bottom-md">
+        <div class="toolbar-inner"style="background-image: url(img/botclear.png)">
+          <a href="#view-home" class="tab-link tab-link-active">
+            <img src="img/homered.png"height="25" width="25">
+            <span class="tabbar-label">Home</span>
+          </a>
+            
+          <a href="#view-business" class="tab-link">
+           <img src="img/businessred.png"height="25" width="25">
+            <span class="tabbar-label">Business</span>
+          </a>
+            
+          <a href="#view-individual" class="tab-link">
+             <img src="img/individual.png"height="25" width="25">
+            <span class="tabbar-label">Individual</span>
+          </a>
+            
+          <a href="#view-info" class="tab-link">
+            <img src="img/info.png"height="25" width="25">
+            <span class="tabbar-label">info</span>
+          </a>
+            
+        </div>
+      </div>
+      <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+      <div id="view-home" class="view view-main tab tab-active">
+        <!-- Page, data-name contains page name which can be used in page callbacks -->
+        <div class="page" data-name="home" >
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner"style="background-image: url(img/top6.png)">
+                <div class="left"><img src="img/wtclogo5.png" width="100" height="150"></div>
+               <!--<img id="header" src="img/test.png">-->
+                <div class="title">Where's the Craic</div>
+              <div class="right">
+                <a href="#" class="list login-screen-open" data-login-screen="#my-login-screen"><button>Login</button></a>
+                  
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrollable page content-->
+          
+            <div class="page-content">
+             
+            <!--<div class="block block-strong">
+              <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+              <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
+            </div> -->
+
+            <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="20" class="swiper-container swiper-init swiper">
+              <div class="swiper-pagination"></div>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/concert.jpg"></div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+              </div>
+            </div>
+             
+               <div>    
+            <center>
+                <h1>WELCOME</h1>
+            </center>
+            </div>
+           
+        <div>
+        <!--<table>  
+            <tr class="spaceUnder">
+            <td>
+                     <img id="imagen" style="float:left"; src="img/appusee.jpg" width="250" height="200">
+            </td>
+            <td> 
+                    <p>Where’s the craic aims to provide users the easiest and fun way to search for businesses (food & beverage and music & cultural venues) based on location and search criteria delimited by them.</p>     
+           </td>
+        </tr>
+         <tr class="spaceUnder">
+            <td>
+                   <img id="imagen" style="float:left"; src="img/sales.jpg" width="250" height="200">
+            </td>
+            <td> 
+                <p>On the other hand provides a tool for business on the field to show their place, create a profile and real­time information about the place to attract customers, build loyalty and promote their business</p>  
+           </td>
+        </tr>
+             <tr class="spaceUnder">
+            <td>
+                <img id="imagen" style="float:right"; src="img/appusage5.jpg" width="250" height="200">
+               
+            </td>
+            <td> 
+                <p>We use location intelligence (geolocation) to build meaningful experiences for our users. Discover new places near where you are, enjoy the city and all that it has to offer! From concerts to networking events. You will always find something suitable to your preferences</p>
+           </td>
+        <tr class="spaceUnder">
+        <tr>
+            <td>
+                  <img id="imagen" style="float:right"; src="img/appusse2.png" width="250" height="200">
+            </td>
+            <td>
+                   
+                <p>Business can find new audiences and promote your business on our application. Build a loyal attendance group. We make it easy to delight your attendees to keep them coming back and interested in your business with exciting offers. </p> 
+            </td>
+        </tr> 
+        </table>-->
+            
+<div class="block-title"></div>
+<div class="block">
+  <div class="row">
+    <div class="col-100 tablet-50"><img id="imagen" style="float:left"; src="img/appusee.jpg" width="250" height="200"></div>
+    <div class="col-100 tablet-50"><p>Where’s the craic aims to provide users the easiest and fun way to search for businesses (food & beverage and music & cultural venues) based on location and search criteria delimited by them.</p></div> 
+  </div>
+
+</div>
+            
+<div class="block">
+  <div class="row">
+    <div class="col-100 tablet-50"><img id="imagen" style="float:left"; src="img/sales.jpg" width="250" height="200"></div>
+    <div class="col-100 tablet-50"><p>On the other hand provides a tool for business on the field to show their place, create a profile and real­time information about the place to attract customers, build loyalty and promote their business</p></div> 
+  </div>
+
+</div>
+            
+<div class="block">
+  <div class="row">
+    <div class="col-100 tablet-50"><p>We use location intelligence (geolocation) to build meaningful experiences for our users. Discover new places near where you are, enjoy the city and all that it has to offer! From concerts to networking events. You will always find something suitable to your preferences</p></div>
+    <div class="col-100 tablet-50"><img id="imagen" style="float:right"; src="img/appusage5.jpg" width="250" height="200"></div> 
+  </div>
+
+</div>
+            
+<div class="block">
+  <div class="row">
+    <div class="col-100 tablet-50"><p>Business can find new audiences and promote your business on our application. Build a loyal attendance group. We make it easy to delight your attendees to keep them coming back and interested in your business with exciting offers.</p></div>
+    <div class="col-100 tablet-50"><img id="imagen" style="float:right"; src="img/appusse2.png" width="250" height="200"></div> 
+  </div>
+
+</div>
+              
+            <br><br><br><br><br><br>
+                
+                <center>
+                    <a href="https://www.cct.ie//"><img  src="img/fb.png" width="100" height="100"></a>
+                    <a href="https://www.cct.ie//"><img  src="img/twitter2.png" width="100" height="100"></a>
+                
+                    <a href="https://www.cct.ie//"><img  src="img/google.png" width="100" height="100"></a>
+                    <a href="https://www.cct.ie//"><img  src="img/Share.png" width="100" height="100"></a>
+                    
+                    <br><br>
+                    <p>CopyRight@2018</p>
+            
+           </center>
+                </div>    
+                
+          </div>
+        </div>
+      </div>
+
+      <!-- Init individual View -->
+      <div class="view tab" id="view-individual"></div>
+      
+      <!-- Init business View -->
+      <div class="view tab" id="view-business"></div>
+
+      <!-- Init info View -->
+      <div class="view tab" id="view-info"></div>
+    </div>
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="my-login-screen">
+      <div class="view">
+        <div class="page">
+          <div class="page-content login-screen-content" style="background-image:url(img/back4.jpg)">
+            <div class="navbar">
+            <div class="navbar-inner"style="background-image: url(img/top6.png)">
+              <div class="left">
+                <a class="link login-screen-close" href="#">Go Back</a>
+              </div>
+                <img src="img/wtclogo5.png" width="100" height="150">
+              <div class="title">Where's the Craic</div>
+             
+            </div>
+          </div>
+              <center>
+                <h1>USER LOGIN</h1>
+            
+             
+                      <div id="loginFB">
+                      <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();"width="400px"></fb:login-button> 
+                     </div>
+                        <br>
+                      <div id="profileImage"></div>
+
+                      <div id="status"></div>    
+
+                     <div id="logOutFB">
+                    <button onclick="logoutPerson()">Logout</butt
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        on>
+                      </div>
+              </center>
+              <center>
+                <h1>BUSINESS LOGIN</h1>
+            </center>
+            <div class="list">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Username</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="username" placeholder="Your username">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Password</div>
+                    <div class="item-input-wrap">
+                      <input type="password" name="password" placeholder="Your password">
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <p style="text-align: center;"><a href="">Forgot password?</a></p>
+                </li>
+              </ul>
+            </div>
+            <div class="list">
+              <ul>
+                <li>
+                  <a href="#" class="button login-button">Sign In</a>
+                </li>
+              </ul><br>
+              
+              <div style="text-align: center;">New to Where's the Craic? Just click <a href="">Create account</a> here!</div>
+              <div class="block-footer">By clicking Create Account, you agree to our <a>Terms and Condiotions</a> and that you have read our <a>Data Policy</a>, including our <a>Cookie Policy</a>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cordova -->
+  <!--
+  <script src="cordova.js"></script>
+  -->
+
+  <!-- Framework7 library -->
+  <script src="js/framework7.min.js"></script>
+  <!-- App routes -->
+  <script src="js/routes.js"></script>
+  <!-- Your custom app scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
