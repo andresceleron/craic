@@ -1,0 +1,29 @@
+Index: 
+	Indivuduals: after login with facebook, logoutPerson() function from app.js file is not working.
+	It should close de session and come back to the index. (Hight Priority)
+
+	Put the login bottom on the views business and individual. (Medium priority)
+	
+	Information of individual, business and info needs to be fill. (Low priority) 
+	
+Login page: 
+
+	For existing Business users, login needs a bottom or sign in bigger and call a function to validate the access.
+	for this we have to create the php file to connect with the data base and give or deny access. 
+	In this step we have to create a session to keep trace of the business id. (Tong/Andres) (Hight Priority) 
+
+	For new business, the option "Create account" needs to call the create business page or view. I put the code on 
+	/bussRegister.html but this have to be a view named different and in another frame. (Hight priority)
+	we need to include web address and eircode field, Lat, Long and url for the logo. This last 3 are low priority.
+
+Dashboards.	
+	After a login or a new business registration, the site must open a Business Dashboard (It is not implemented)
+	(Medium priority)
+	
+	Create a new craic, must be on the "Daily Event" view. 	the code is on the file /bussDash.
+	
+	After run a php file for create a business or new craic, the page stay blank and doesn't return to the html call. 
+	I was checking codes but maybe we need to use Ajax or functions in js for the calls instead of calling from html to php.
+	hight priority.
+	
+Check the declarations of views and routes file. 
